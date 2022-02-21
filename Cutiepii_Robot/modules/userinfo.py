@@ -329,7 +329,7 @@ def info(update: Update, context: CallbackContext):
         text += "\n\nThe Disaster level of this person is 'God'."
         disaster_level_present = True
     elif user.id in DEV_USERS:
-        text += "\n\nThis user is member of 'Black Knights Union'."
+        text += "\n\nThis user is member of 'Dev'."
         disaster_level_present = True
     elif user.id in DRAGONS:
         text += "\n\nThe Disaster level of this person is 'Dragon'."
@@ -474,8 +474,8 @@ def stats(update, context):
             status
             + "\n*Bot statistics*:\n"
             + "\n".join([mod.__stats__() for mod in STATS])
-            + f"\n\n[✦ Support](https://t.me/{SUPPORT_CHAT}) | [✦ Updates](https://t.me/Black_Knights_Union)\n\n"
-            + "╘══「 by [Awesome RJ](https://github.com/Awesome-RJ) 」\n",
+            + "\n\n[✦ Updates](https://t.me/DionProjects) | [✦ Updates](https://t.me/DionSupport)\n\n"
+            + "╘══「 by [Dion](https://t.me/Royzu) 」\n",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
         )
@@ -487,9 +487,9 @@ def stats(update, context):
                         "\n*Bot statistics*:\n"
                         + "\n".join(mod.__stats__() for mod in STATS)
                     )
-                    + f"\n\n✦ [Support](https://t.me/{SUPPORT_CHAT}) | ✦ [Updates](https://t.me/Black_Knights_Union)\n\n"
+                    + "\n\n✦ [⚡ Updates](https://t.me/DionProjects) | ✦ [🔰 Support](https://t.me/DionSupport)\n\n"
                 )
-                + "╘══「 by [Awesome-RJ](https://github.com/Awesome-RJ) 」\n"
+                + "╘══「 by [Dion](https://t.me/Royzu) 」\n"
             ),
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
