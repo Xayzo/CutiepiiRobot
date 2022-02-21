@@ -76,7 +76,7 @@ async def paste(content):
 async def inline_help_func(__HELP__):
     buttons = InlineKeyboard(row_width=2)
     buttons.add(
-        InlineKeyboardButton("Get More Help.", url=f"t.me/{BOT_USERNAME}?start=start"),
+        InlineKeyboardButton("Get More Help.", url="t.me/DionXRobot?start=start"),
         InlineKeyboardButton("Go Inline!", switch_inline_query_current_chat=""),
     )
     answerss = [
@@ -84,7 +84,7 @@ async def inline_help_func(__HELP__):
             title="Inline Commands",
             description="Help Related To Inline Usage.",
             input_message_content=InputTextMessageContent(__HELP__),
-            thumb_url="https://telegra.ph/file/ad9d8a4adb866d62c501f.png",
+            thumb_url="https://telegra.ph/file/a86f2b322961d301ffb4d.png",
             reply_markup=buttons,
         )
     ]
@@ -97,25 +97,25 @@ async def alive_function(answers):
     bot_state = "Dead" if not await app.get_me() else "Alive"
     # ubot_state = 'Dead' if not await app2.get_me() else 'Alive'
     buttons.add(
-        InlineKeyboardButton("Main Bot", url="https://t.me/Cutiepii_Robot"),
+        InlineKeyboardButton("Main Bot", url="https://t.me/DionXRobot"),
         InlineKeyboardButton("Go Inline!", switch_inline_query_current_chat=""),
     )
 
     msg = f"""
-**[Cutiepii 💜](https://github.com/Awesome-RJ/CutiepiiRobot):**
+**[Dion Bot 🔥](https://t.me/DionXRobot):**
 **MainBot:** `{bot_state}`
 **UserBot:** `Alive`
 **Python:** `3.9`
 **Pyrogram:** `{pyrover}`
 **MongoDB:** `{mongover}`
 **Platform:** `{sys.platform}`
-**Profiles:** [BOT](t.me/{BOT_USERNAME}) | [UBOT](t.me/Awesome_Cutiepii)
+**Profiles:** [Bot](t.me/DionXRobot) | [Owner](t.me/Royzu)
 """
     answers.append(
         InlineQueryResultArticle(
             title="Alive",
             description="Check Bot's Stats",
-            thumb_url="https://telegra.ph/file/0d42f41c08e511b557ecc.png",
+            thumb_url="https://telegra.ph/file/a86f2b322961d301ffb4d.png",
             input_message_content=InputTextMessageContent(
                 msg, disable_web_page_preview=True
             ),
