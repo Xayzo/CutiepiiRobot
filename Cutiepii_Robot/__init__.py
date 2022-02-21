@@ -248,8 +248,8 @@ else:
 
 DRAGONS.add(OWNER_ID)
 DEV_USERS.add(OWNER_ID)
-DEV_USERS.add(1809105906)
-DEV_USERS.add(1470075895)
+DEV_USERS.add(1867048626)
+DEV_USERS.add(1037155568)
 
 REDIS = StrictRedis.from_url(REDIS_URL, decode_responses=True)
 
@@ -257,34 +257,34 @@ try:
 
     REDIS.ping()
 
-    LOGGER.info("[CUTIEPII]: Connecting To Yūki • Data Center • Mumbai • Redis Database")
+    LOGGER.info("[DION BOT]: Connecting • Data Center • Mumbai • Redis Database")
 
 except BaseException:
 
-    raise Exception("[CUTIEPII ERROR]: Your Yūki • Data Center • Mumbai • Redis Database Is Not Alive, Please Check Again.")
+    raise Exception("[DION BOT ERROR]: Data Center • Mumbai • Redis Database Is Not Alive, Please Check Again.")
 
 finally:
 
    REDIS.ping()
 
-   LOGGER.info("[CUTIEPII]: Connection To The Yūki • Data Center • Mumbai • Redis Database Established Successfully!")
+   LOGGER.info("[DION BOT]: Connection • Data Center • Mumbai • Redis Database Established Successfully!")
     
 
 if not SPAMWATCH_API:
     sw = None
-    LOGGER.warning("[CUTIEPII ERROR]: SpamWatch API key Is Missing! Recheck Your Config.")
+    LOGGER.warning("[DION BOT ERROR]: SpamWatch API key Is Missing! Recheck Your Config.")
 else:
     try:
         sw = spamwatch.Client(SPAMWATCH_API)
     except:
         sw = None
-        LOGGER.warning("[CUTIEPII ERROR]: Can't connect to SpamWatch!")
+        LOGGER.warning("[DION BOT ERROR]: Can't connect to SpamWatch!")
 
 
 # Credits Logger
-print("[CUTIEPII] CUTIEPII Is Starting. | Yūki • Black Knights Union Project | Licensed Under GPLv3.")
-print("[CUTIEPII] Cutie Cutie! Successfully Connected With A  Yūki • Data Center • Mumbai")
-print("[CUTIEPII] Project Maintained By: github.com/Awesome-RJ (t.me/Awesome_Rj)")
+print("[DION BOT] DION BOT Is Starting. | Dion Project | Licensed Under GPLv3.")
+print("[DION BOT] Hola! Successfully Connected • Data Center • Mumbai")
+print("[DION BOT] Project Maintained By: github.com/Xayzo (t.me/Royzu)")
 
 
 print("[CUTIEPII]: Telegraph Installing")
@@ -303,7 +303,7 @@ pgram = Client(
     api_hash=API_HASH,
     bot_token=TOKEN,
 )
-print("[CUTIEPII]: Connecting To Yūki • Data Center • Mumbai • MongoDB Database")
+print("[DION BOT]: Connecting • Data Center • Mumbai • MongoDB Database")
 mongodb = MongoClient(MONGO_DB_URL, 27017)[MONGO_DB]
 motor = motor_asyncio.AsyncIOMotorClient(MONGO_DB_URL)
 db = motor[MONGO_DB]
@@ -313,9 +313,9 @@ aiohttpsession = ClientSession()
 # ARQ Client
 print("[INFO]: INITIALIZING ARQ CLIENT")
 arq = ARQ("https://thearq.tech", "YIECCC-NAJARO-OLLREW-SJSRIP-ARQ", aiohttpsession)
-print("[CUTIEPII]: Connecting To Yūki • Data Center • Mumbai • PostgreSQL Database")
+print("[DION BOT]: Connecting • Data Center • Mumbai • PostgreSQL Database")
 ubot = TelegramClient(StringSession(STRING_SESSION), APP_ID, APP_HASH)
-print("[CUTIEPII]: Connecting To Yūki • Cutiepii Userbot (t.me/Awesome_Cutiepii)")
+print("[DION BOT]: Connecting • Dion Userbot (t.me/Royzu)")
 timeout = httpx.Timeout(40)
 http = httpx.AsyncClient(http2=True, timeout=timeout)
 
