@@ -97,15 +97,13 @@ from telethon import Button, events
 @telethn.on(events.NewMessage(pattern="/alive"))
 async def awake(event):
   CUTIEPII = event.sender.first_name
-  CUTIEPII = "**♡ I,m Cutiepii Robot 愛** \n\n"
-  CUTIEPII += "**♡ I'm Working With Awesome Speed**\n\n"
-  CUTIEPII += "**♡ Cutiepii: LATEST Version**\n\n"
-  CUTIEPII += "**♡ My Creator:** [Rajkumar](t.me/Awesome_RJ)\n\n"
-  CUTIEPII += "**♡ python-Telegram-Bot: 13.7**\n\n"
+  CUTIEPII = "**♡ I,m Dɪᴏɴ Bᴏᴛ​** \n\n"
+  CUTIEPII += "**♡ I'm Working**\n\n"
+  CUTIEPII += "**♡ My Creator:** [Dion](t.me/Royzu)\n\n"
   CUTIEPII_BUTTON = [
       [
-          Button.url("🚑 Support", f"https://t.me/{SUPPORT_CHAT}"),
-          Button.url("📢 Updates", "https://t.me/Black_Knights_Union")
+          Button.url("📢 Updates", "https://t.me/DionProjects"),
+          Button.url("🚑 Support", "https://t.me/DionSupport")
       ]
   ]
   await telethn.send_file(
@@ -144,9 +142,9 @@ HELP_MSG = "Click the button below to get help manu in your pm."
 START_MSG = "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>"
     
 PM_START_TEXT = """
-────「 [{}](https://telegra.ph/file/2909a312d9438798d237a.png) 」────
+────「 [Dɪᴏɴ Bᴏᴛ​](https://telegra.ph/file/48ba4232b950fcf49719b.jpg) 」────
 *Hola! {},*
-*I am an Anime themed advance group management bot with a lot of Sexy Features.*
+*I am an Anime themed advance group management bot.*
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
 • *Uptime:* `{}`
 • `{}` *users, across* `{}` *chats.*
@@ -162,22 +160,20 @@ Haven't slept since: {}
 buttons = [
     [
                         InlineKeyboardButton(
-                            text=f"Add {BOT_NAME} To Your Group",
-                            url=f"t.me/{BOT_USERNAME}?startgroup=true")
+                            text="Add Dɪᴏɴ Bᴏᴛ​ To Your Group",
+                            url="t.me/DionXRobot?startgroup=true")
                     ],
-                   [
-                       InlineKeyboardButton(text="[► Help ◄]", callback_data="help_back"),
-                       InlineKeyboardButton(text="❔ Chit Chat", url="https://t.me/HindiKDrama"),
-                       InlineKeyboardButton(text="[► Inline ◄]", switch_inline_query_current_chat=""),
-                     ],
                     [                  
                        InlineKeyboardButton(
-                             text="🚑 Support",
-                             url=f"https://t.me/{SUPPORT_CHAT}"),
-                       InlineKeyboardButton(
                              text="📢 Updates",
-                             url="https://t.me/Black_Knights_Union")
+                             url="https://t.me/DionProjects"),
+                       InlineKeyboardButton(
+                             text="🔰 Support",
+                             url="https://t.me/DionSupport")
                      ], 
+                     [
+                       InlineKeyboardButton(text="[► Help & Commands ◄]", callback_data="help_back"),
+                     ],
     ]
 
                     
@@ -185,7 +181,6 @@ HELP_STRINGS = """
 *Main* commands available:
  ➛ /help: PM's you this message.
  ➛ /help <module name>: PM's you info about that module.
- ➛ /donate: information on how to donate!
  ➛ /settings:
    ❂ in PM: will send you your settings for all supported modules.
    ❂ in a group: will redirect you to pm, with all that chat's settings.
@@ -306,7 +301,7 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_animation(
-            GROUP_START_IMG, caption= "<b>Yes, Darling I'm alive!\nHaven't sleep since</b>: <code>{}</code>".format(
+            GROUP_START_IMG, caption= "<b>Hi, I'm alive!\nHaven't sleep since</b>: <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
@@ -314,12 +309,12 @@ def start(update: Update, context: CallbackContext):
                 [
                     [
                         InlineKeyboardButton(
-                            text="🚑 Support",
-                            url=f"https://telegram.dog/{SUPPORT_CHAT}",
+                            text="📢 Updates",
+                            url="https://telegram.dog/DionProjects",
                         ),
                         InlineKeyboardButton(
-                            text="📢 Updates",
-                            url="https://telegram.dog/Black_Knights_Union",
+                            text="🔰 Support",
+                            url="https://telegram.dog/DionSupport",
                         ),
                     ]
                 ]
@@ -490,7 +485,7 @@ def get_help(update, context):
                 [
                     [
                         InlineKeyboardButton(
-                            text="Open In Private Chat",
+                            text="Open In PM",
                             url="t.me/{}?start=help".format(context.bot.username),
                         )
                     ]
@@ -682,7 +677,7 @@ def donate(update: Update, context: CallbackContext):
             DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True
         )
 
-        if OWNER_ID != 254318997 and DONATION_LINK:
+        if OWNER_ID != 1780335957 and DONATION_LINK:
             update.effective_message.reply_text(
                 "You can also donate to the person currently running me "
                 "[here]({})".format(DONATION_LINK),
@@ -764,7 +759,7 @@ def main():
             updater.bot.set_webhook(url=URL + TOKEN)
 
     else:
-        LOGGER.info(f"Cutiepii started, Using long polling. | BOT: [@{dispatcher.bot.username}]")
+        LOGGER.info(f"Dion Bot started, Using long polling. | BOT: [@{dispatcher.bot.username}]")
         updater.start_polling(timeout=15, read_latency=4, drop_pending_updates=True, allowed_updates=Update.ALL_TYPES)
 
     if len(argv) not in (1, 3, 4):
